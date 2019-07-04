@@ -17,7 +17,11 @@ app.listen(PORT, function(){
 
 // including routes
 require("./routes/htmlRoutes") (app);
-require("./routes/apiRoutes");
+require("./routes/apiRoutes") (app);
+
+// made results global to make it accessible to the routes
+
+
 
 
 // I will connect a mongooseDB to the server
@@ -30,25 +34,25 @@ require("./routes/apiRoutes");
 // https://finance.yahoo.com/news/  
 // I will scrape from the site above
 
-axios.get("https://finance.yahoo.com/news/").then(function(response) {
+// axios.get("https://finance.yahoo.com/news/").then(function(response) {
 
-const $ = cheerio.load(response.data);
+// const $ = cheerio.load(response.data);
 
-const results = [];
 
-$("h3").each(function(i, element) {
+// $("h3").each(function(i, element) {
 
-        const title = $(element).text();
+//         const title = $(element).text();
 
-       const link = $(element).children().attr("href");
+//        const link = $(element).children().attr("href");
 
-       results.push({
-           title: title, 
-           link: link
-        });
+//        results.push({
+//            title: title, 
+//            link: link
+//         });
 
-        console.log(results)
+//         console.log(results)
 
-});
+// });
 
-});
+// });
+

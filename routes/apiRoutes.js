@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const axios = require("axios");
+const cheerio = require("cheerio");
+
 module.exports = function(app) {
 
 app.get("/scrape-articles", function() {
@@ -8,9 +10,9 @@ app.get("/scrape-articles", function() {
 
 const $ = cheerio.load(response.data);
 
-const results = [];
+// const results = [];
 
-$("h3").each(function(i, element) {
+$("h3").each(function(i, element, results) {
 
         const title = $(element).text();
 
