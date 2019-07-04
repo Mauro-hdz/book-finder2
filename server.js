@@ -15,6 +15,10 @@ app.listen(PORT, function(){
     console.log("App listening on port: " + PORT);
 });
 
+// including routes
+require("./routes/htmlRoutes") (app);
+require("./routes/apiRoutes");
+
 
 // I will connect a mongooseDB to the server
 // When the user sees an article he wants to save the article will be saved to the db 

@@ -1,14 +1,17 @@
 const path = require('path');
-const express = require(express);
-const router = express.Router();
+const express = require("express");
+const app = express();
+
+
 module.exports = function(app) {
     // example route
-router.get("/", function(req, res) {
-res.render("index")
+app.get("/", function(req, res) {
+res.render("index");
 
+// if (error) console.log(error);
 });
 
-router.get("/saved-articles", function(req, res) {
+app.get("/saved-articles", function(req, res) {
     
 res.render("saved")
 
