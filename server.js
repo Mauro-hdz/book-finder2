@@ -5,22 +5,27 @@ const cheerio = require('cheerio')
 const mongoose = require('mongoose');
 const mLogger = require('morgan');
 const app = express();
+const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
 app.engine('handlebars', exphbs({defaultLayout: "main"}));
 app.set('view engine', 'handlebars');
 
-app.listen(PORT, function(){
-    console.log("App listening on port: " + PORT);
-});
+app.use(express.static("public"));
+
+// connecting mongoose
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost/scrapeDB", { useNewUrlParser: true });
+
 
 // including routes
 require("./routes/htmlRoutes") (app);
 require("./routes/apiRoutes") (app);
 
-// made results global to make it accessible to the routes
-
+app.listen(PORT, function(){
+    console.log("App listening on port: " + PORT);
+});
 
 
 

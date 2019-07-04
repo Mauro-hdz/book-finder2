@@ -13,9 +13,12 @@
 
 <h1 class="uk-heading-line uk-text-center uk-heading-large"><span>Welcome to Dollar Scrape!</span></h1>
 
-<div class="uk-container" id="article-container">
+<div style="margin-top: 4rem" class="uk-container" id="article-container">
 {{#each article}}
-    <h3>{{title}}</h3>
-    <a>{{link}}</a>
+    <h3 class="uk-text-center">{{title}}</h3>
+   <p class="uk-text-center uk-text-success"><a class="uk-link-text" href="{{link}}">{{link}}</a></p> 
+       <button class="uk-button uk-button-secondary">Save Article</button>
+
+    <hr class="uk-divider-icon">
     {{/each}}
 </div>

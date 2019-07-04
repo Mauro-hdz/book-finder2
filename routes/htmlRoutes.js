@@ -8,14 +8,12 @@ module.exports = function(app) {
     // example route
 app.get("/", function(req, res) {
 
-    const results = [];
-
-
     axios.get("https://finance.yahoo.com/news/").then(function(response) {
 
         const $ = cheerio.load(response.data);
-        
-        
+        const results = [];
+
+            
         $("h3").each(function(i, element) {
         
                 const title = $(element).text();
@@ -24,14 +22,15 @@ app.get("/", function(req, res) {
         
                results.push({
                    title: title, 
-                   link: link
+                   link:"https://finance.yahoo.com" + link
                 });
         
-                console.log(results)
-                res.render("index", {article: results});
+                // console.log(results)
+                // res.render("index", {article: results});
         
         });
-        
+        console.log(results)
+        res.render("index", {article: results});
         });
         
 
