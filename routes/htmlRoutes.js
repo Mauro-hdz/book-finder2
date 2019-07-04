@@ -29,7 +29,7 @@ app.get("/", function(req, res) {
                 // res.render("index", {article: results});
         
         });
-        console.log(results)
+        console.log(results);
         res.render("index", {article: results});
         });
         
