@@ -6,7 +6,7 @@ const app = express();
 module.exports = function(app) {
     // example route
 app.get("/", function(req, res) {
-res.render("index");
+res.render("index", article);
 
 // if (error) console.log(error);
 });

@@ -1,20 +1,11 @@
 <nav class="uk-navbar-container" uk-navbar>
     <div class="uk-navbar-center">
-        <span uk-icon="world"></span>
+        <span uk-icon="icon: world; ratio: 3"></span>
 
         <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="#">Active</a></li>
-            <li>
-                <a href="#">Parent</a>
-                <div class="uk-navbar-dropdown">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li class="uk-active"><a href="#">Active</a></li>
-                        <li><a href="#">Item</a></li>
-                        <li><a href="#">Item</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="#">Item</a></li>
+            <li class="uk-active"><a href="/saved-articles">Saved Articles</a></li>
+            <li><a href="/scrape-articles">Scrape Articles</a></li>
+            <li><a href="#">Clear</a></li>
         </ul>
 
     </div>
@@ -23,5 +14,8 @@
 <h1 class="uk-heading-line uk-text-center uk-heading-large"><span>Welcome to Dollar Scrape!</span></h1>
 
 <div class="container" id="article-container">
-
+{{#each article}}
+    <h3>{{title}}</h3>
+    <a>{{link}}</a>
+    {{/each}}
 </div>
