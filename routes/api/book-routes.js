@@ -13,4 +13,3 @@ router
 // "api/books/:id" for the following route
 .delete()
 
-module.exports = router;
