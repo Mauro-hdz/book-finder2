@@ -3,7 +3,7 @@ const booksController = require("../../controllers/booksController");
 
 router.route("/") 
 .get(booksController.findAll)
-.post(booksController.//Something goes here)
+.post(booksController).//Something goes here)
 
 
 router
