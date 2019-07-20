@@ -1,15 +1,15 @@
 const router = require("express").Router();
 const booksController = require("../../controllers/booksController");
 
-router.route("/") 
+router.route("/saved") 
 .get(booksController.findAll)
-.post(booksController).//Something goes here)
+// .post(booksController)//Something goes here)
 
 
 router
-.route("api/books")
-.get() //method to read all books from the db
-.put() //method to post book to the db
-// "api/books/:id" for the following route
-.delete()
+.route("/saved/:id")
+//.create()
+.post(booksController.saveBook)
+// .delete()
+.delete(booksController.deleteBook)
 
