@@ -4,16 +4,24 @@ import Form from './components/form';
 import Jumbotron from './components/jumbotron';
 import Navbar from './components/navbar';
 import Results from './components/results';
+import Saved from './pages/Saved';
 // import {Navbar, Jumbotron, Form} from 'reactstrap';
-
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 function App() {
   return (
-    <div className="App">
+    <Router>
+      <div className="App">
+     
      <Navbar />
      <Jumbotron />
      <Form />
-     <Results />
+     <Switch>
+     <Route path="/" exact component={Results}/>
+     <Route path="/saved" component={Saved} />
+     </Switch>
     </div>
+    </Router>
+    
   );
 }
 

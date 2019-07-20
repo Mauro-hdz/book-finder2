@@ -1,6 +1,16 @@
 import React from 'react';
 
-function resultCard() {
+class resultContainer extends React.Component {
+  state = {}
+
+  componentDidMount() {};
+
+  handleInputChange = event => {};
+
+  handleFormSubmit = event => {};
+
+
+  render() {
     return (
         <div className="card mb-3" style="">
   <div className="row no-gutters">
@@ -17,6 +27,10 @@ function resultCard() {
   </div>
 </div>
     )
-}
+};
 
-export default resultCard;
+};
+
+
+
+export default resultContainer;
