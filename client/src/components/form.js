@@ -9,6 +9,7 @@ function Form() {
       <h3 className="mb-5 text-dark">Wish For A Book!</h3>
       <hr/>
       <input type="text" className="form-control" placeholder="Search"/>
+      <button className=" mt-3 btn btn-success search">Search</button>
     </div>
     
   </div>

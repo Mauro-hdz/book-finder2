@@ -4,10 +4,14 @@ import React from 'react';
 function Navbar() {
     return (
         <div>
-            <nav className="shadow-lg navbar mb-0 fixed-top">
+            <nav className="shadow-lg navbar mb-0 bg-secondary">
                 <ul>
-                    <li className="navbar-brand mb-0 pb-0 font-weight-bold text-dark">Book Genie</li>
-                    <li className=" float-right navbar-brand mt-0  nav-link"></li>
+                    <li path="/" className="navbar-brand mb-0 pb-0 font-weight-bold text-dark">
+                        <a className="navbar-brand text-dark" href="/">Book Genie</a>
+                        </li>
+                    <li className=" float-right  mt-0  nav-link">
+                        <a className="nav-link text-dark" href="/saved">Saved Books</a>
+                        </li>
                 </ul>
             </nav> 
         </div>

@@ -19,7 +19,7 @@ function App() {
 
      <Switch>
      <Route path="/" exact  component={Results}/>
-     <Route path="/saved" component={Saved} />
+     <Route path="/saved" exact component={Saved} />
      </Switch>
     </div>
     </Router>
