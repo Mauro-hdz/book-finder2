@@ -14,9 +14,11 @@ function App() {
      
      <Navbar />
      <Jumbotron />
-     <Form />
+     {/* <Form /> */}
+     <Route path="/" exact component={Form}/>
+
      <Switch>
-     <Route path="/" exact component={Results}/>
+     <Route path="/" exact  component={Results}/>
      <Route path="/saved" component={Saved} />
      </Switch>
     </div>
