@@ -1,12 +1,20 @@
-const router = require('express').Router();
-const path = require('path');
+const express = require('express')
+const app = express();
+// const router = express.Router()
+// const path = require('path');
 const bookRoutes = require('./book-routes');
 
-router.use('/api/books', bookRoutes);
+app.use('/api/books', bookRoutes);
+// bookRoutes.initialize(App)
 
 // If no API routes are hit, send the React app
-router.use(function(req, res) {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-  });
+// app.use(function(req, res) {
+//     res.sendFile(path.join(__dirname, "../client/build/index.html"));
+//   });
 
-module.exports = router;
+  // app.get('*', function (req, res) {
+  //   const index = path.join(__dirname, 'build', 'index.html');
+  //   res.sendFile(index);
+  // });
+
+module.exports = app;
