@@ -15,10 +15,13 @@
 
 <div style="margin-top: 4rem" class="uk-container" id="article-container">
 {{#each article}}
+<div class="article">
     <h3 class="uk-text-center">{{title}}</h3>
    <p class="uk-text-center uk-text-success"><a class="uk-link-text" href="{{link}}">{{link}}</a></p> 
      <p class="uk-text-center"><button class="uk-button uk-button-secondary">Save Article</button>
 </p>  
     <hr class="uk-divider-icon">
+</div>
+    
     {{/each}}
 </div>
