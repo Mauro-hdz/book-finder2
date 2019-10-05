@@ -24,10 +24,6 @@ app.get("/", function(req, res) {
                    title: title, 
                    link:"https://finance.yahoo.com" + link
                 });
-        
-                // console.log(results)
-                // res.render("index", {article: results});
-        
         });
         console.log(results);
         res.render("index", {article: results});
@@ -36,7 +32,6 @@ app.get("/", function(req, res) {
 
 
 
-// if (error) console.log(error);
 
 });
 

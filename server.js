@@ -18,8 +18,8 @@ app.use(express.static('public'));
 
 // connecting mongoose
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/scrapeDB", { useNewUrlParser: true });
-
+    process.env.MONGODB_URI || "mongodb://localhost/scrapeDB", { useNewUrlParser: true })
+.catch (error => (console.log("Hey bud we got an error: ", error)));
 
 // including routes
 require("./routes/htmlRoutes") (app);
@@ -38,28 +38,5 @@ app.listen(PORT, function(){
 
 
 
-// https://finance.yahoo.com/news/  
-// I will scrape from the site above
 
-// axios.get("https://finance.yahoo.com/news/").then(function(response) {
-
-// const $ = cheerio.load(response.data);
-
-
-// $("h3").each(function(i, element) {
-
-//         const title = $(element).text();
-
-//        const link = $(element).children().attr("href");
-
-//        results.push({
-//            title: title, 
-//            link: link
-//         });
-
-//         console.log(results)
-
-// });
-
-// });
 
