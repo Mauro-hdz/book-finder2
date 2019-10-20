@@ -11,7 +11,7 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
-},
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CaptainHdz/book-finder.git"
