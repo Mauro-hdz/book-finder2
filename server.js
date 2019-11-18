@@ -12,13 +12,15 @@ const PORT = process.env.PORT || 3000;
 app.engine('handlebars', exphbs({defaultLayout: "main"}));
 app.set('view engine', 'handlebars');
 
-// app.use(express.static("public"));
 app.use(express.static('public'));
 
 
 // connecting mongoose
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/scrapeDB", { useNewUrlParser: true })
+    process.env.MONGODB_URI || "mongodb://localhost/scrapeDB", {
+        useNewUrlParser: true,
+        useUnifiedTopology: true   
+    })
 .catch (error => (console.log("Hey bud we got an error: ", error)));
 
 // including routes
@@ -29,11 +31,6 @@ app.listen(PORT, function(){
     console.log("App listening on port: " + PORT);
 });
 
-
-
-// I will connect a mongooseDB to the server
-// When the user sees an article he wants to save the article will be saved to the db 
-// When the user wants to leave a note attached to the article it will be saved
 
 
 

@@ -10,4 +10,10 @@ $(document).on("click","#clear-btn", function() {
 });
 
 
+$(document).on("click", ".save-btn", () => {
+    console.log("Ready to save article");
+console.log(this)
+
+})
+
 });

@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const cheerio = require("cheerio");
-const jq = require('jquery');
 const articleController = require("../controllers/articleController");
 
 module.exports = function(app) {
