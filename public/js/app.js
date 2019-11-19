@@ -2,6 +2,7 @@ console.log("App is connected!")
 
 $(document).ready(function() {
 
+    //Clears articles 
 $(document).on("click","#clear-btn", function() {
     event.preventDefault();
 
@@ -10,10 +11,16 @@ $(document).on("click","#clear-btn", function() {
 });
 
 
-$(document).on("click", ".save-btn", () => {
+$(document).on("click",".save-btn",function() {
     console.log("Ready to save article");
-console.log(this)
+const chosenArticle = $(this).parent(".article");
+
+const link = chosenArticle.find("a").text();
+const title = chosenArticle.find("h3").text();
+
+console.log(link, title);
 
 })
 
 });
+
