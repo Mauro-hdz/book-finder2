@@ -5,7 +5,7 @@ const cheerio = require("cheerio");
 const axios = require("axios");
 
 module.exports = function(app) {
-    // example route
+    //Home route
 app.get("/", function(req, res) {
 
     axios.get("https://finance.yahoo.com/news/").then(function(response) {
