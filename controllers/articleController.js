@@ -15,8 +15,9 @@ module.exports = {
         Article.create(req.body)
         .then(data => {
             console.log('Data Successfully Added: ' + data)
+            res.json(data)
         })
-        .catch(err => console.log('Error occurred: ' + err))
+        .catch(err => console.log('Error occurred: ' + err));
     }
 
 }

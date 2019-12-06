@@ -7,6 +7,7 @@ app.get("/scrape-articles", function(req, res) {
     res.redirect("/");
     console.log("NEW ARTICLES SCRAPED!!!");
 }),
+app.post("/add", articleController.createArticle);
 
 app.get("/saved", articleController.allArticles);
 

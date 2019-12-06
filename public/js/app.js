@@ -18,7 +18,16 @@ const chosenArticle = $(this).parent(".article");
 const link = chosenArticle.find("a").text();
 const title = chosenArticle.find("h3").text();
 
-console.log(link, title);
+    data = {
+        url: link,
+        title: title
+    };
+
+$.post("/add", data)
+.then(response => {console.log(response)})
+.catch(err => {console.log(err)});
+
+console.log(data);
 
 })
 

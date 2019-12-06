@@ -1,7 +1,6 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
 const mongoose = require('mongoose');
-const mLogger = require('morgan');
 const app = express();
 const path = require('path');
 
@@ -11,6 +10,9 @@ app.engine('handlebars', exphbs({defaultLayout: "main"}));
 app.set('view engine', 'handlebars');
 
 app.use(express.static('public'));
+//Handles JSON requests
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 
 // connecting mongoose
