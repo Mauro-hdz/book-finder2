@@ -1,11 +1,9 @@
 const path = require('path');
-const express = require("express");
-const app = express();
 const cheerio = require("cheerio");
 const axios = require("axios");
 
 module.exports = function(app) {
-    //Home route
+    //Home route scrapes articles and sends index file
 app.get("/", function(req, res) {
 
     axios.get("https://finance.yahoo.com/news/").then(function(response) {

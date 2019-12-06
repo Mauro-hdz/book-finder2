@@ -1,7 +1,5 @@
-const express = require("express");
-const app = express();
 const articleController = require("../controllers/articleController");
-
+//App parameter comes from server.js
 module.exports = function(app) {
 
 app.get("/scrape-articles", function(req, res) {

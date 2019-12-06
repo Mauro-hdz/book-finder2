@@ -1,14 +1,12 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
-const axios = require('axios');
-const cheerio = require('cheerio')
 const mongoose = require('mongoose');
 const mLogger = require('morgan');
 const app = express();
 const path = require('path');
 
 const PORT = process.env.PORT || 3000;
-
+//Set up handlebars
 app.engine('handlebars', exphbs({defaultLayout: "main"}));
 app.set('view engine', 'handlebars');
 
