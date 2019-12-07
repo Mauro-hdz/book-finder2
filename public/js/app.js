@@ -11,7 +11,7 @@ $(document).on("click","#clear-btn", function() {
 });
 
 
-$(document).on("click",".save-btn",function() {
+$(document).on("click", ".save-btn", function() {
     console.log("Ready to save article");
 const chosenArticle = $(this).parent(".article");
 

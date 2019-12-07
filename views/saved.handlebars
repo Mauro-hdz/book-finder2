@@ -3,7 +3,7 @@
         <span uk-icon="icon: world; ratio: 3"></span>
 
         <ul class="uk-navbar-nav">
-            <li class=""><a href="/scrape-articles">Scrape Articles</a></li>
+            <li class=""><a href="/">Scrape Articles</a></li>
             <li class="uk-active"><a href="/saved-articles">Saved Articles</a></li>
             <li><a id="clear-btn">Clear</a></li>
         </ul>
@@ -14,6 +14,14 @@
 <h1 class="uk-heading-line uk-text-center uk-heading-large"><span>Saved Articles</span></h1>
 
 <div class="uk-container">
-    
+{{#each articles}}
+<div class="saved-article uk-container">
+<h3 class="uk-text-center">{{title}}</h3>
+    <div class="uk-text-center uk-text-success">
+        <a class="uk-link-text" target="_blank" href="{{url}}">{{url}}</a>
+    </div>
+<hr class="uk-divider-icon">
+</div>
+{{/each}}
 
 </div>

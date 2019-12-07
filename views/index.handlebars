@@ -3,7 +3,7 @@
         <span uk-icon="icon: world; ratio: 3"></span>
 
         <ul class="uk-navbar-nav">
-            <li class="uk-active"><a href="/scrape-articles">Scrape Articles</a></li>
+            <li class="uk-active"><a href="/">Scrape Articles</a></li>
             <li class=""><a href="/saved-articles">Saved Articles</a></li>
             <li><a id="clear-btn">Clear</a></li>
         </ul>
@@ -14,14 +14,17 @@
 <h1 class="uk-heading-line uk-text-center uk-heading-large"><span>Welcome to Dollar Scrape!</span></h1>
 
 <div style="margin-top: 4rem" class="uk-container" id="article-container">
-{{#each article}}
-  <div class="article uk-container">
+{{#each articles}}
+<div class="article uk-container">
     <h3 class="uk-text-center">{{title}}</h3>
-        <div class="uk-text-center uk-text-success">
-            <a class="uk-link-text" target="_blank" href="{{link}}">{{link}}</a>
-        </div>
-            <button data-title={{title}} data-link={{link}} class="uk-button uk-button-secondary uk-align-center uk-margin-top save-btn" type="submit">Save Article</button>
+    <div class="uk-text-center uk-text-success">
+        <a class="uk-link-text" target="_blank" href="{{link}}">{{link}}</a>
+    </div>
+    <p class="uk-text-center">{{summary}}</p>
+    <button data-title={{title}} data-link={{link}} class="uk-button uk-button-secondary uk-align-center uk-margin-top save-btn" type="submit">
+        Save Article
+    </button>
     <hr class="uk-divider-icon">
-  </div>
+</div>
 {{/each}}
 </div>

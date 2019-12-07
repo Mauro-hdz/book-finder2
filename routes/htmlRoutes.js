@@ -1,43 +1,11 @@
+const htmlController = require("../controllers/htmlController");
 const path = require('path');
-const cheerio = require("cheerio");
-const axios = require("axios");
 
 module.exports = function(app) {
     //Home route scrapes articles and sends index file
-app.get("/", function(req, res) {
+app.get("/", htmlController.scrapeArticles);
 
-    axios.get("https://finance.yahoo.com/news/").then(function(response) {
-
-        const $ = cheerio.load(response.data);
-        const results = [];
-
-            
-        $("h3").each(function(i, element) {
-        
-                const title = $(element).text();
-        
-               const link = $(element).children().attr("href");
-        
-               results.push({
-                   title: title, 
-                   link:"https://finance.yahoo.com" + link
-                });
-        });
-        console.log(results);
-        res.render("index", {article: results});
-        });
-        
-
-
-
-
-});
-
-app.get("/saved-articles", function(req, res) {
-    
-res.render("saved")
-
-});
+app.get("/saved-articles", htmlController.savedArticles);
 
 
 
