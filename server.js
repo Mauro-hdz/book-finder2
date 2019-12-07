@@ -21,7 +21,7 @@ mongoose.connect(
         useNewUrlParser: true,
         useUnifiedTopology: true   
     })
-.catch (error => (console.log("Hey bud we got an error: ", error)));
+    .catch (error => (console.log("Mongoose Connection Error: ", error)));
 
 // including routes
 require("./routes/htmlRoutes") (app);

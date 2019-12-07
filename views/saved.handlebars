@@ -15,13 +15,18 @@
 
 <div class="uk-container">
 {{#each articles}}
-<div class="saved-article uk-container">
+<div class="saved-article uk-container uk-card uk-card-default uk-margin-bottom">
 <h3 class="uk-text-center">{{title}}</h3>
     <div class="uk-text-center uk-text-success">
         <a class="uk-link-text" target="_blank" href="{{url}}">{{url}}</a>
     </div>
-<hr class="uk-divider-icon">
+    <div class="uk-text-center uk-margin-top uk-margin-bottom">
+        <button class="uk-button uk-button-secondary uk-margin-medium-right uk-column-1-6">Add Note</button>
+        <button class="uk-button uk-button-danger uk-margin-medium-left uk-column-1-6">Delete Article</button>
+    </div>
 </div>
+<hr class="uk-divider-icon">
+
 {{/each}}
 
 </div>

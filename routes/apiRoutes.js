@@ -1,10 +1,9 @@
 const articleController = require("../controllers/articleController");
 //App parameter comes from server.js
 module.exports = function(app) {
+    
+app.post("api/add", articleController.createArticle);
 
-
-app.post("/add", articleController.createArticle);
-
-app.get("/saved", articleController.allArticles);
+app.get("api/saved", articleController.allArticles);
 
 };
