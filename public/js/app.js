@@ -12,7 +12,6 @@ $(document).on("click","#clear-btn", function() {
 
 
 $(document).on("click", ".save-btn", function() {
-    console.log("Ready to save article");
 const chosenArticle = $(this).parent(".article");
 
 const link = chosenArticle.find("a").text();
@@ -23,13 +22,25 @@ const title = chosenArticle.find("h3").text();
         title: title
     };
 
-$.post("/add", data)
+$.post("api/add", data)
 .then(response => {console.log(response)})
 .catch(err => {console.log(err)});
+});
 
-console.log(data);
 
-})
+$(document).on("click", "button.delete", function() {
+  const id =  $(this).attr("data-id");
+  const card = $(this).parents(".saved-article");
+  $.ajax({
+      url: "api/delete/" + id,
+      type: "DELETE"
+  })
+  .then((response) => {
+      card.remove()
+    })
+  .catch(err => console.log(err));
+});
+
 
 });
 

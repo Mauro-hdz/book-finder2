@@ -31,6 +31,7 @@ module.exports = {
         Article.find({})
         .then((dataArr) => {
             res.render("saved", {articles: dataArr})
+
         })
         .catch(err => console.log('savedArticles error: ' + err))
     }

@@ -4,7 +4,7 @@
 
         <ul class="uk-navbar-nav">
             <li class=""><a href="/">Scrape Articles</a></li>
-            <li class="uk-active"><a href="/saved-articles">Saved Articles</a></li>
+            <li class="uk-active saved-page"><a href="/saved-articles">Saved Articles</a></li>
             <li><a id="clear-btn">Clear</a></li>
         </ul>
 
@@ -21,8 +21,8 @@
         <a class="uk-link-text" target="_blank" href="{{url}}">{{url}}</a>
     </div>
     <div class="uk-text-center uk-margin-top uk-margin-bottom">
-        <button class="uk-button uk-button-secondary uk-margin-medium-right uk-column-1-6">Add Note</button>
-        <button class="uk-button uk-button-danger uk-margin-medium-left uk-column-1-6">Delete Article</button>
+        <button class="add-note uk-button uk-button-secondary uk-margin-medium-right uk-column-1-6">Add Note</button>
+        <button data-id={{_id}} class="delete uk-button uk-button-danger uk-margin-medium-left uk-column-1-6">Delete Article</button>
     </div>
 </div>
 <hr class="uk-divider-icon">

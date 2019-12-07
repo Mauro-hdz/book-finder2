@@ -18,6 +18,14 @@ module.exports = {
             res.json(data)
         })
         .catch(err => console.log('Error occurred: ' + err));
+    },
+    deleteArticle: (req, res) => {
+        Article.findByIdAndDelete(req.params.id)
+        .then((response) => {
+            console.log("Item deleted from Article collection: " + response)
+            res.json("Item deleted: " + response)
+        })
+        .catch(err => console.log("deleteArticle error: " + err));
     }
 
 }
