@@ -23,7 +23,15 @@ const title = chosenArticle.find("h3").text();
     };
 
 $.post("api/add", data)
-.then(response => {console.log(response)})
+.then(response => {
+    chosenArticle.remove()
+    UIkit.notification({
+        message: 'Article Has Been Saved',
+        status: 'success',
+        pos: 'bottom-left',
+        timeout: 3000
+    });
+})
 .catch(err => {console.log(err)});
 });
 
@@ -36,7 +44,8 @@ $(document).on("click", "button.delete", function() {
       type: "DELETE"
   })
   .then((response) => {
-      card.remove()
+        card.next('HR').remove()
+        card.remove()
     })
   .catch(err => console.log(err));
 });
