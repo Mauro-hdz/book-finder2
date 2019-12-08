@@ -4,16 +4,18 @@
 
 ## Summary of the App
 
-An app that scrapes current articles from the Yahoo Finance news site. The user is able to save any articles to a database and view them on a separate page. The user may also clear the articles that were scraped.
+An app that scrapes current articles from the Yahoo Finance news site. The user is able to save any articles to a database, view them on a separate page, and add notes for later. The user may also clear the articles that were scraped.
 
 
 ### Technologies
 
--Javascript
--Node.js
--Express
--Mongooose
--Handlebars front-end framework
--UIkit front-end framework
+* -Javascript
+* -Node.js
+* -Express
+* -MongoDB/Mongooose
+* -Handlebars (Templating Engine)
+* -UIkit (Front End CSS library)
+* -Axios
+* -JQuery
 
 
