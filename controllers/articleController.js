@@ -26,6 +26,14 @@ module.exports = {
             res.json("Item deleted: " + response)
         })
         .catch(err => console.log("deleteArticle error: " + err));
+    },
+    updateNote: (req, res) => {
+        Article.findByIdAndUpdate(req.params.id, {note: req.body.note})
+        .then(data => {
+            console.log('Update Successfull')
+            res.json('Update Successfull')
+        })
+        .catch(err => console.log("updateNote error: " + err));
     }
 
 }

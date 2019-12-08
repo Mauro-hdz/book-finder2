@@ -8,4 +8,6 @@ app.get("/api/saved", articleController.allArticles);
 
 app.delete("/api/delete/:id", articleController.deleteArticle);
 
+app.post("/api/update/:id", articleController.updateNote);
+
 };

@@ -5,26 +5,41 @@
 
             <ul class="uk-navbar-nav">
                 <li class=""><a href="/">Scrape Articles</a></li>
-                <li class="uk-active saved-page"><a href="/saved-articles">Saved Articles</a></li>
                 <li><a id="clear-btn">Clear</a></li>
+                <li class="uk-active saved-page"><a href="/saved-articles">Saved Articles</a></li>
             </ul>
 
         </div>
     </nav>
 </div>
-
 <h1 class="uk-heading-line uk-text-center uk-heading-large"><span>Saved Articles</span></h1>
 
+<div id="modal" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 id="modal-title" class="uk-modal-title"></h2>
+        <p id="modal-p"></p>
+        <div class="uk-margin">
+            <textarea id="note" class="uk-textarea" rows="4" placeholder="Write Note" type="text"></textarea>
+        </div>
+        <p class="uk-text-right">
+            <button id="close-btn" class="uk-button uk-button-default uk-modal-close" type="button">Close</button>
+            <button data-id="" class="add-note uk-button uk-button-secondary uk-modal-close" type="button">Add Note</button>
+        </p>
+    </div>
+</div>
 <div class="uk-container">
 {{#each articles}}
-<div class="saved-article uk-container uk-card uk-card-default uk-margin-bottom">
+<div data-text="{{summary}}" class="saved-article uk-container uk-card uk-card-default uk-margin-bottom">
 <h3 class="uk-text-center">{{title}}</h3>
     <div class="uk-text-center uk-text-success">
         <a class="uk-link-text" target="_blank" href="{{url}}">{{url}}</a>
     </div>
     <div class="uk-text-center uk-margin-top uk-margin-bottom">
-        <button class="add-note uk-button uk-button-secondary uk-margin-medium-right uk-column-1-6">Add Note</button>
+        <button uk-toggle="target: #modal" id="modal-btn" class="uk-button uk-button-secondary uk-margin-medium-right uk-column-1-6">Add Note</button>
         <button data-id={{_id}} class="delete uk-button uk-button-danger uk-margin-medium-left uk-column-1-6">Delete Article</button>
+    </div>
+    <div id="note-display" class="uk-text-center uk-margin uk-margin-bottom">
+        Notes: {{note}}
     </div>
 </div>
 <hr class="uk-divider-icon">
