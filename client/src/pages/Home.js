@@ -29,7 +29,8 @@ class Home extends Component {
             event.preventDefault();
             axios.get('https://www.googleapis.com/books/v1/volumes?q=' + this.state.query)
             .then(response => {
-                this.setState({                   
+                this.setState({ 
+                    query: '',                  
                     books: response.data.items
                 })
                 // const bookArray = response.data.items;
@@ -52,11 +53,12 @@ class Home extends Component {
                        console.log(book)
                        return (
                        <BookCard
-                        thumbnail={book.volumeInfo.imageLinks.smallThumbnail}
+                        thumbnail={book.volumeInfo.imageLinks.thumbnail}
                         title={book.volumeInfo.title}
                         subtitle={book.volumeInfo.subtitle}
                         description={book.volumeInfo.description}
                         author={book.volumeInfo.authors}
+                        purchaseLink={'https://www.amazon.com/s?k='+ book.volumeInfo.title +'+by+'+ book.volumeInfo.authors + '&i=stripbooks&ref=nb_sb_noss_2'}
                         />)
                    })}                   
                </Results>
