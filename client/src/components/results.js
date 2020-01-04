@@ -1,12 +1,12 @@
 import React from 'react';
 // import resultContainer from './resultContainer'
 
-function Results() {
+function Results(props) {
     return (
-        <div className="container">
-            <div className="card shadow-lg mx-auto m-5 shadow-sm border">
-                <div className="card-header">Results</div>
-                <div className="card-body"></div>
+        <div className="container pb-5">
+            <div className="card shadow-lg mx-auto mt-5 shadow-sm border">
+                <div className="card-header font-weight-bolder">Results</div>
+                <div className="card-body">{props.children}</div>
             </div>
         </div>
         

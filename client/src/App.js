@@ -14,7 +14,6 @@ function App() {
       <div className="App">
         <Navbar />
         <Jumbotron />
-
         <Switch>
           <Route path="/" exact>
               <Home />

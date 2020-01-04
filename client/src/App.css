@@ -32,10 +32,23 @@
   }
 }
 
+nav.navbar {
+  box-shadow: 0px 1px 10px black;
+}
+
 .jumbotron {
   background: url('https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
 }
 
+.card-width {
+  max-width: 100%;
+}
+
 .bg-dark-brown {
-  background-color: rgb(63, 60, 60);
+  background-color: rgb(77, 50, 50);
+}
+
+.bg-gradient-brown {
+  background: rgb(42,42,45);
+  background: linear-gradient(180deg, rgba(42,42,45,1) 0%, rgba(52,39,47,1) 20%, rgba(77, 50, 50,1) 100%);
 }

@@ -4,7 +4,7 @@ import React from 'react';
 function Navbar() {
     return (
         <div>
-            <nav className="shadow-lg navbar mb-0 bg-dark-brown">
+            <nav className="navbar mb-0 bg-dark-brown fixed-top">
                 <a className="navbar-brand text-light font-weight-bold" href="/">Book Genie</a>
                 <ul className="navbar-nav ml-5 mr-auto">
                     <li className="mt-0  nav-item">

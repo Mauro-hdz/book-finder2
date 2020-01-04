@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Form from '../components/form';
 import Results from '../components/results';
+import BookCard from '../components/bookCard';
 import axios from 'axios';
 require('dotenv').config();
 
@@ -10,13 +11,14 @@ require('dotenv').config();
 
 class Home extends Component {
     state = {
-        query: ''
+        query: '',
+        books: []
     }
 
     handleChange = () => {
         const searchQuery = document.getElementById('search-query').value;
         this.setState({
-            query: searchQuery
+            query: searchQuery,
         })
     }
 
@@ -27,12 +29,13 @@ class Home extends Component {
             event.preventDefault();
             axios.get('https://www.googleapis.com/books/v1/volumes?q=' + this.state.query)
             .then(response => {
-                console.log(this.state)
-                console.log(response.data.items)
-                const bookArray = response.data.items;
-                bookArray.forEach((book, i) => {
-                    console.log(book.volumeInfo)
+                this.setState({                   
+                    books: response.data.items
                 })
+                // const bookArray = response.data.items;
+                // bookArray.forEach((book, i) => {
+                //     const previewLink = book.volumeInfo.previewLink;
+                // })
             })
             .catch(err => {console.log(err)});
         })
@@ -40,11 +43,23 @@ class Home extends Component {
 
    render() {
        return (
-           <div>
+           <div className="bg-gradient-brown pt-5">
                <Form
                value={this.state.query}
                handleChange={this.handleChange}/>
-               <Results />
+               <Results>
+                   {this.state.books.map(book => {
+                       console.log(book)
+                       return (
+                       <BookCard
+                        thumbnail={book.volumeInfo.imageLinks.smallThumbnail}
+                        title={book.volumeInfo.title}
+                        subtitle={book.volumeInfo.subtitle}
+                        description={book.volumeInfo.description}
+                        author={book.volumeInfo.authors}
+                        />)
+                   })}                   
+               </Results>
            </div>
        )
    }
