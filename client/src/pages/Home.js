@@ -25,10 +25,14 @@ class Home extends Component {
         
         submitBtn.addEventListener('click', (event) => {
             event.preventDefault();
-            axios.get('https://www.googleapis.com/books/v1/volumesq=' + this.state.query + '&key=process.env.API_KEY')
+            axios.get('https://www.googleapis.com/books/v1/volumes?q=' + this.state.query)
             .then(response => {
                 console.log(this.state)
                 console.log(response.data.items)
+                const bookArray = response.data.items;
+                bookArray.forEach((book, i) => {
+                    console.log(book.volumeInfo)
+                })
             })
             .catch(err => {console.log(err)});
         })
