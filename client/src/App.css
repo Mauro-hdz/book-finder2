@@ -31,3 +31,11 @@
     transform: rotate(360deg);
   }
 }
+
+.jumbotron {
+  background: url('https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260');
+}
+
+.bg-dark-brown {
+  background-color: rgb(63, 60, 60);
+}
