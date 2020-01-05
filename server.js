@@ -3,9 +3,10 @@ const app = express();
 require('dotenv').config();
 const mysql = require('mysql2');
 const Sequelize = require('sequelize');
-const routes = require('./routes');
+
 const PORT = process.env.PORT || 8080;
 
+//middleware
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
@@ -13,11 +14,12 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'));
 }
 
+//connecting to mySQL DB
 const sequelize = new Sequelize('saved_books_db', 'root', process.env.mySQL_PW, {
     host: 33036,
     dialect: 'mysql'
-})
-
+});
+//'checks' for connection or returns error on failure
 sequelize
   .authenticate()
   .then(function(err) {
@@ -28,10 +30,10 @@ sequelize
   });
 
 
+//conecting our routes
+app.use('/books/api', require('./routes'));
 
-app.use(routes);
-
-
+//starting server
 app.listen(PORT, () => console.log(`Now listening on: http://localhost:${PORT}`));
 
 
