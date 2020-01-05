@@ -21,7 +21,7 @@ const sequelize = new Sequelize('saved_books_db', 'root', process.env.mySQL_PW, 
 sequelize
   .authenticate()
   .then(function(err) {
-    console.log('🌍 Connection has been established at port: ' + 33036);
+    console.log('🌍 Connection has been established at PORT: ' + 33036);
   })
   .catch(function (err) {
     console.log('❌ Unable to connect to the database:', err);
