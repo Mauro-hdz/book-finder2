@@ -9,9 +9,13 @@ const Book = sequelize.define('book', {
     title: {type: Sequelize.STRING, allowNull: false},
     subtitle: {type: Sequelize.STRING, allowNull: true},
     author: {type: Sequelize.STRING, allowNull: false},
-    description: {type: Sequelize.STRING, allowNull: false},
-    thumbnail: {type: Sequelize.STRING, allowNull: false},
-    purchaseLink: {type: Sequelize.STRING, allowNull: false}
+    summary: {type: Sequelize.STRING, allowNull: true},
+    thumbnail: {type: Sequelize.STRING, allowNull: true},
+    purchaseLink: {type: Sequelize.STRING, allowNull: false},
+    id: {type: Sequelize.STRING, allowNull: false, primaryKey: true}
+},
+{
+    timestamps: false
 });
 
 

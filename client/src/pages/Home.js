@@ -32,7 +32,8 @@ class Home extends Component {
             subtitle: selectedBook.getAttribute('subtitle'),
             description: selectedBook.getAttribute('description'),
             author: selectedBook.getAttribute('author'),
-            purchaseLink: selectedBook.getAttribute('link')
+            purchaseLink: selectedBook.getAttribute('purchase-link'),
+            id: selectedBook.getAttribute('id')
         };
         console.log(newBook)
         axios.post('/api/books/add', newBook)

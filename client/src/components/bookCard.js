@@ -32,7 +32,7 @@ const BookCard = (props) => {
                             subtitle={props.subtitle}
                             description={props.description}
                             author={props.author}
-                            link={props.purchaseLink} 
+                            purchase-link={props.purchaseLink} 
                             >Save Book For Later</button>
                             </div>
                         </div>
