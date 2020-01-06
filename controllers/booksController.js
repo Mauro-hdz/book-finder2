@@ -42,15 +42,18 @@ module.exports = {
     },
 
     deleteBook: (req, res) => {
-        // Book.destroy({
-        //     where: {
-        //         //properties to look for to delete the object
-        //     }
-        // })
-        // .then(response => {
-        //     console.log(response, 'Book successfully deleted')
-        // })
-        // .catch(err => {console.log('Error at deleteBook: ' + err)})
+        console.log(req.params)
+        Book.destroy({
+            where: {
+                //properties to look for to delete the object
+                id: req.params.id
+            }
+        })
+        .then(response => {
+            res.send('Book was successfully deleted')
+            console.log(response, 'Book successfully deleted')
+        })
+        .catch(err => {console.log('Error at deleteBook: ' + err)});
     }
 
 };

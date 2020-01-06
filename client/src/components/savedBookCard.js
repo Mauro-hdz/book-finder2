@@ -1,10 +1,8 @@
 import React from 'react';
 
-
-
-const BookCard = (props) => {
+const SavedBookCard = props => {
     return (
-            <div className="mt-5 mb-3 card mx-auto dark-shadow card-width">
+        <div className="mt-5 mb-3 card mx-auto dark-shadow card-width">
                 <div className="row no-gutters">
                     <div className="col-md-4">
                     <img src={props.thumbnail} className="card-img" alt="book thumbnail" />
@@ -26,14 +24,8 @@ const BookCard = (props) => {
                             <div className="col-sm">
                             <button 
                             onClick={() => props.onClick(props.id)} 
-                            className="btn btn-outline-success rounded-pill mt-3 save-btn"
-                            id={props.id} 
-                            thumbnail={props.thumbnail}
-                            title={props.title}
-                            subtitle={props.subtitle}
-                            description={props.description}
-                            author={props.author}
-                            purchase-link={props.purchaseLink}>Save Book For Later</button>
+                            className="btn btn-outline-danger rounded-pill mt-3 save-btn"
+                            id={props.id} >Delete Book</button>
                             </div>
                         </div>
                     </div>
@@ -43,5 +35,4 @@ const BookCard = (props) => {
     )
 }
 
-
-export default BookCard;
+export default SavedBookCard;

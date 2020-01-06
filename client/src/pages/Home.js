@@ -15,7 +15,7 @@ class Home extends Component {
         books: [],
         totalBooks: ''
         
-    }
+    };
 
     handleChange = () => {
         const searchQuery = document.getElementById('search-query').value;
@@ -26,7 +26,7 @@ class Home extends Component {
 
     onClick = (id) => {
         const selectedBook = document.getElementById(`${id}`);
-        const newBook = {
+        const newBook = {//Our object that we will send to the server
             thumbnail: selectedBook.getAttribute('thumbnail'),
             title: selectedBook.getAttribute('title'),
             subtitle: selectedBook.getAttribute('subtitle'),
@@ -35,10 +35,14 @@ class Home extends Component {
             purchaseLink: selectedBook.getAttribute('purchase-link'),
             id: selectedBook.getAttribute('id')
         };
-        console.log(newBook)
         axios.post('/api/books/add', newBook)
-        .then(res => console.log(res))
-        .catch(err => console.log(err));
+        .then(res => {
+            const savedBook = this.state.books.find((book) => {return book.id === id});//Finds and returns saved book
+            const index = this.state.books.indexOf(savedBook);//selects and returns index of saved book
+            this.state.books.splice(index, 1);//removes deleted book from array
+            this.setState({books: this.state.books})//Set state to our updated array
+        })
+        .catch(err => console.log('Book was not saved', err));
     };
 
     componentDidMount() {
@@ -58,7 +62,7 @@ class Home extends Component {
                         this.setState({
                             totalBooks: '0 Books Were Found',
                             books: []
-                        })
+                        });
                     }
                 })
                 .catch(err => {
@@ -74,16 +78,16 @@ class Home extends Component {
                <Form
                value={this.state.query}
                handleChange={this.handleChange}/>
-               <Results>
+               <Results header='Search Results'>
             <div>{this.state.totalBooks}</div>
-                   {this.state.books.map(book => { 
+                   {this.state.books.map(book => {
                        return (
                        <BookCard
     thumbnail={book.volumeInfo.imageLinks? book.volumeInfo.imageLinks.thumbnail : 'https://media.giphy.com/media/2Faz9FbRzmwxY0pZS/giphy.gif'}
                         title={book.volumeInfo.title}
                         subtitle={book.volumeInfo.subtitle}
                         description={book.volumeInfo.description}
-                        author={book.volumeInfo.authors.join(', ')}
+                        author={book.volumeInfo.authors? book.volumeInfo.authors.join(', ') : ''}
                         key={book.id}
                         id={book.id}
         purchaseLink={'https://www.amazon.com/s?k='+ book.volumeInfo.title +'+by+'+ book.volumeInfo.authors + '&i=stripbooks&ref=nb_sb_noss_2'}
