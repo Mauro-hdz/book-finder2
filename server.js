@@ -23,15 +23,15 @@ const sequelize = new Sequelize('saved_books_db', 'root', process.env.mySQL_PW, 
 sequelize
   .authenticate()
   .then(function(err) {
-    console.log('🌍 Connection has been established at PORT: ' + 33036);
+    console.log('🌍 Database connection has been established at PORT: ' + 33036);
   })
   .catch(function (err) {
     console.log('❌ Unable to connect to the database:', err);
   });
 
-
 //conecting our routes
-app.use('/books/api', require('./routes'));
+require('./routes/api/book-routes') (app);
+// app.use(require('./routes'));
 
 //starting server
 app.listen(PORT, () => console.log(`Now listening on: http://localhost:${PORT}`));
