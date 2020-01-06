@@ -1,5 +1,4 @@
 import React from 'react';
-// import resultContainer from './resultContainer'
 
 function Results(props) {
     return (

@@ -31,7 +31,7 @@ sequelize
 
 //conecting our routes
 require('./routes/api/book-routes') (app);
-// app.use(require('./routes'));
+app.use(require('./routes'));
 
 //starting server
 app.listen(PORT, () => console.log(`Now listening on: http://localhost:${PORT}`));

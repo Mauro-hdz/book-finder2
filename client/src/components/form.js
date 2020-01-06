@@ -18,7 +18,7 @@ function Form(props) {
               onChange={props.handleChange}
               placeholder="Search"
             />
-            <button id="submit-btn" className=" mt-3 btn btn-dark search">Search</button>
+            <button id="submit-btn" className=" mt-3 btn btn-dark search rounded-pill">Search</button>
           </div>
         </div>
       </form>

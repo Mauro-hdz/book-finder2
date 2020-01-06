@@ -28,6 +28,7 @@ module.exports = {
         //     console.log(response, 'Book successfully destroyed');
         //   })
         // .catch(err => {console.log('Error at saveBook: ' + err)});
+        res.send('You made a request to saveBook')
     },
 
     deleteBook: (req, res) => {
