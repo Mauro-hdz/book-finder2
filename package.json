@@ -12,9 +12,6 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
-  "production": {
-    "use_env_variable": "DATABASE_URL"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CaptainHdz/book-finder.git"
