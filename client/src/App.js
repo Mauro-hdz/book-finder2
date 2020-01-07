@@ -5,6 +5,9 @@ import Navbar from './components/navbar';
 import Saved from './pages/Saved';
 import Home from './pages/Home';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+// import Noty from 'noty';  
+import "../node_modules/noty/lib/noty.css";  
+import "../node_modules/noty/lib/themes/sunset.css"; 
 
 
 

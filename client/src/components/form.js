@@ -8,7 +8,7 @@ function Form(props) {
       <form>
         <div className="container">
           <div className="border rounded shadow p-5 bg-light">
-            <h2 className="mb-5 text-dark">Find A Book!</h2>
+            <h2 className="mb-3 mt-0 text-dark">Find A Book!</h2>
             <hr />
             <input
               type="text"

@@ -3,6 +3,9 @@ import Form from '../components/form';
 import Results from '../components/results';
 import BookCard from '../components/bookCard';
 import axios from 'axios';
+import Noty from 'noty';
+// import "../node_modules/noty/lib/noty.css";  
+// import "../node_modules/noty/lib/themes/mint.css";
 require('dotenv').config();
 
 
@@ -40,7 +43,14 @@ class Home extends Component {
             const savedBook = this.state.books.find((book) => {return book.id === id});//Finds and returns saved book
             const index = this.state.books.indexOf(savedBook);//selects and returns index of saved book
             this.state.books.splice(index, 1);//removes deleted book from array
-            this.setState({books: this.state.books})//Set state to our updated array
+            this.setState({books: this.state.books});//Set state to our updated array
+
+            new Noty({
+                text: res.data,
+                timeout: 3000,
+                theme: 'sunset',
+                type: 'success'
+            }).show();
         })
         .catch(err => console.log('Book was not saved', err));
     };
@@ -79,7 +89,7 @@ class Home extends Component {
                value={this.state.query}
                handleChange={this.handleChange}/>
                <Results header='Search Results'>
-            <div>{this.state.totalBooks}</div>
+            <div className="results-text">{this.state.totalBooks}</div>
                    {this.state.books.map(book => {
                        return (
                        <BookCard
