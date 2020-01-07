@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 //connecting to mySQL DB
-const sequelize = new Sequelize('saved_books_db', 'root', process.env.mySQL_PW, {
+const sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL ||'saved_books_db', 'root' || process.env.CLEARDB_DATABASE_URL, process.env.CLEARDB_DATABASE_URL || process.env.mySQL_PW, {
     host: 33036,
     dialect: 'mysql'
 });
