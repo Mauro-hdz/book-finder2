@@ -3,6 +3,7 @@ const app = express();
 require('dotenv').config();
 const mysql = require('mysql2');
 const Sequelize = require('sequelize');
+const DB = require('./DB/connection');
 
 const PORT = process.env.PORT || 8080;
 
@@ -14,14 +15,8 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static('client/build'));
 }
 
-//connecting to mySQL DB
-const sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL ||'saved_books_db', 'root' || process.env.CLEARDB_DATABASE_URL, process.env.CLEARDB_DATABASE_URL || process.env.mySQL_PW, {
-    host: 33036,
-    dialect: 'mysql'
-});
-//'checks' for connection or returns error on failure
-sequelize
-  .authenticate()
+//'checks' for DB connection or returns error on failure
+DB.authenticate()
   .then(function(err) {
     console.log('🌍 Database connection has been established at PORT: ' + 33036);
   })
