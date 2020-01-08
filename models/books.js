@@ -1,8 +1,8 @@
 require('dotenv').config();
 const Sequelize = require('sequelize');
 
-const sequelize = new Sequelize(process.env.CLEARDB_DATABASE_URL ||'saved_books_db', process.env.CLEARDB_USER || 'root', process.env.CLEARDB_PW || process.env.mySQL_PW, {
-    host: 33036,
+const sequelize = new Sequelize(process.env.CLEARDB_SCHEMA ||'saved_books_db', process.env.CLEARDB_USER || 'root', process.env.CLEARDB_PW || process.env.mySQL_PW, {
+    host: process.env.CLEARDB_HOSTNAME || 'localhost',
     dialect: 'mysql'
 });
 
