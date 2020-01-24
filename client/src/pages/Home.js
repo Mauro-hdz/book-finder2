@@ -84,7 +84,7 @@ class Home extends Component {
 
    render() {
        return (
-           <div className="bg-gradient-brown pt-5">
+           <div className="bg-gradient-brown pt-5 home">
                <Form
                value={this.state.query}
                handleChange={this.handleChange}/>
