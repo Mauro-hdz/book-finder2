@@ -1,12 +1,12 @@
 <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-    <nav class="uk-navbar-container" uk-navbar>
+    <nav class="uk-navbar-container bg-black" uk-navbar>
         <div class="uk-navbar-center">
             <span uk-icon="icon: world; ratio: 3"></span>
 
-            <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="/">Scrape Articles</a></li>
-                <li><a id="clear-btn">Clear</a></li>
-                <li class="saved-page"><a href="/saved-articles">Saved Articles</a></li>
+            <ul class="uk-navbar-nav white-text">
+                <li><a class="green-text" href="/">Home</a></li>
+                <li><a class="white-text" id="clear-btn">Clear Articles</a></li>
+                <li class="saved-page"><a class="white-text" href="/saved-articles">Saved Articles</a></li>
             </ul>
 
         </div>
@@ -14,7 +14,7 @@
 </div>
 
 
-<h1 class="uk-heading-line uk-text-center uk-heading-large"><span>Welcome to Dollar Scrape!</span></h1>
+<h1 class="uk-heading-line uk-text-center uk-heading-large"><span>World Finance Report</span></h1>
     
 <div style="margin-top: 4rem" class="uk-container" id="article-container">
 {{#each articles}}

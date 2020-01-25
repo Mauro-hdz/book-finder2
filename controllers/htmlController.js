@@ -14,13 +14,13 @@ module.exports = {
 
                     const title = $(element).text();
                     const link = $(element).children().attr("href");
-                    const summ = $(element).next("P").text();
+                    const summary = $(element).next("P").text();
 
                     results.push({
                         title: title,
                         link: "https://finance.yahoo.com" + link,
-                        summary: summ
-                    })
+                        summary: summary
+                    });
                 });
                 console.log(results);
                 res.render("index", {articles: results });
@@ -30,7 +30,8 @@ module.exports = {
     savedArticles: (req, res) => {
         Article.find({})
         .then((dataArr) => {
-            res.render("saved", {articles: dataArr})
+            console.log(dataArr)
+            res.render("saved", {articles: dataArr.reverse()})
 
         })
         .catch(err => console.log('savedArticles error: ' + err))

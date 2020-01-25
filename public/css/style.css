@@ -1,3 +1,12 @@
-.wallpaper {
-    background-image: url("https://images.wallpaperscraft.com/image/surface_light_silver_background_18396_2560x1600.jpg");
+.bg-black {
+    background-color: black !important;
+}
+
+.white-text {
+    font-weight: bold;
+    color: rgb(213, 213, 218) !important;
+}
+
+.green-text {
+    color: #32d296 !important;
 }

@@ -10,7 +10,7 @@ $(document).on("click","#clear-btn", function() {
         $("#article-container").prepend("<h2> No Articles To Display</h2>").attr("class", "uk-text-center");
 });
 
-
+    //Saves Articles
 $(document).on("click", ".save-btn", function() {
 const chosenArticle = $(this).parent(".article");
 
@@ -36,7 +36,7 @@ $.post("api/add", data)
 .catch(err => {console.log(err)});
 });
 
-
+    //Deletes saved articles
 $(document).on("click", "button.delete", function() {
   const id =  $(this).attr("data-id");
   const card = $(this).parents(".saved-article");
@@ -74,6 +74,7 @@ $(document).on("click", "BUTTON#close-btn", function() {
     $('BUTTON.add-note').attr('data-id', '');
 })
 
+    //Adds a note to the article that was selected
 $(document).on("click", "BUTTON.add-note", function() {
 const modal = $(this).parents('DIV#modal');
 const newNote = modal.find('textarea#note').val();
