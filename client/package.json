@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://localhost:8080/",
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "noty": "^3.2.0-beta",
     "react": "^16.8.6",
